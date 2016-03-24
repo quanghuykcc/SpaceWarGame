@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
-    android:layout_height="200dp"
+    android:layout_height="300dp"
     android:background="#12a5f4"
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/txt_dia_op"
+        android:id="@+id/txt_help_message"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
         android:layout_margin="10dp"
+        android:layout_weight="3"
         android:gravity="center"
-        android:text="This function is being developed."
+        android:text="Move the plane by touching the screen and surfing. You need to destroy as many enemy planes as you can to save the world."
         android:textColor="#ff00ff"
         android:textSize="25sp"
         android:textStyle="bold" >
@@ -19,12 +20,13 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_gravity="center"
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/btn_yes_op"
+            android:id="@+id/btn_ok_help"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#12a5f4"

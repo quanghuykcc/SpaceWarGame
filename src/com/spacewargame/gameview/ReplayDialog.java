@@ -3,6 +3,7 @@ package com.spacewargame.gameview;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -19,9 +20,11 @@ public class ReplayDialog extends Dialog implements OnClickListener {
 	Activity mParentActivity;
 	ImageButton mMenuButton, mReplayButton;
 	TextView mScoreText, mMessageText;
-	public ReplayDialog(Activity parentActivity) {
+	int mScore;
+	public ReplayDialog(Activity parentActivity, int score) {
 		super(parentActivity);
 		mParentActivity = parentActivity;
+		mScore = score;
 	}
 	
 	@Override
@@ -31,11 +34,28 @@ public class ReplayDialog extends Dialog implements OnClickListener {
 	    setContentView(R.layout.dialog_replay);
 	    mMenuButton = (ImageButton) findViewById(R.id.imgbt_menu);
 	    mReplayButton = (ImageButton) findViewById(R.id.imgbt_replay);
+	    
 	    mScoreText = (TextView) findViewById(R.id.txt_score);
 	    mMessageText = (TextView) findViewById(R.id.txt_message);
+	    mScoreText.setText(mScore + "");
+	    SharedPreferences pre = mParentActivity.getSharedPreferences("space_war_game_data", mParentActivity.MODE_PRIVATE);
+		int highScore = pre.getInt("high_score", 0);
+		if (mScore > highScore) {
+			mMessageText.setText("High score:");
+			SharedPreferences.Editor editor = pre.edit();
+			editor.putInt("high_score", mScore);
+			editor.commit();
+		}
+		else {
+			mMessageText.setText("Your score:");
+		}
+	    
+	    
 	    Typeface tfFontFace = Typeface.createFromAsset(mParentActivity.getAssets(),
 				"fonts/VNTHFAP3.TTF");
-	    mScoreText.setTypeface(tfFontFace);
+	    Typeface lavaFontFace = Typeface.createFromAsset(mParentActivity.getAssets(),
+				"fonts/lava.ttf");
+	    mScoreText.setTypeface(lavaFontFace);
 	    mMessageText.setTypeface(tfFontFace);
 	    mMenuButton.setOnClickListener(this);
 	    mReplayButton.setOnClickListener(this);

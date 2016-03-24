@@ -48,11 +48,6 @@ public class BitmapManager {
 				R.drawable.fire_big);
 		mLifeBitmap = BitmapFactory.decodeResource(resources,
 				R.drawable.plane_life);
-		mRocketBitmap = BitmapFactory.decodeResource(resources,
-				R.drawable.rocket_green);
-		mPauseBitmap = BitmapFactory
-				.decodeResource(resources, R.drawable.pause);
-		mPlayBitmap = BitmapFactory.decodeResource(resources, R.drawable.play);
 	}
 
 	public Bitmap getPauseBitmap() {

@@ -28,11 +28,13 @@ public class ExitDialog extends Dialog implements android.view.View.OnClickListe
 	    mYesButton = (Button) findViewById(R.id.btn_yes);
 	    mNoButton = (Button) findViewById(R.id.btn_no);
 	    mMessage = (TextView) findViewById(R.id.txt_dia);
-	    Typeface lavaFontFace = Typeface.createFromAsset(mParentActivity.getAssets(),
+	    Typeface tfFontFace = Typeface.createFromAsset(mParentActivity.getAssets(),
 				"fonts/VNTHFAP3.TTF");
+	    Typeface lavaFontFace = Typeface.createFromAsset(mParentActivity.getAssets(),
+				"fonts/lava.ttf");
 	    mYesButton.setTypeface(lavaFontFace);
 	    mNoButton.setTypeface(lavaFontFace);
-	    mMessage.setTypeface(lavaFontFace);
+	    mMessage.setTypeface(tfFontFace);
 	    mYesButton.setOnClickListener(this);
 	    mNoButton.setOnClickListener(this);
 	}

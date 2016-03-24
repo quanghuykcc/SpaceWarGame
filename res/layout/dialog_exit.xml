@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="200dp"
-    android:background="@drawable/img_exit_background"
+    android:background="#12a5f4"
     android:orientation="vertical" >
 
     <TextView
@@ -13,7 +13,7 @@
         android:gravity="center"
         android:text="Do you want to exit ?"
         android:textColor="#ff00ff"
-        android:textSize="22sp"
+        android:textSize="25sp"
         android:textStyle="bold" >
     </TextView>
 
@@ -27,11 +27,11 @@
             android:id="@+id/btn_yes"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:background="@android:color/white"
+            android:background="#12a5f4"
             android:clickable="true"
             android:text="Yes"
-            android:textSize="22sp"
-            android:textColor="#5DBCD2"
+            android:textSize="50sp"      
+            android:textColor="#ffffff"
             android:textStyle="bold" />
 
         <Button
@@ -39,11 +39,11 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginLeft="5dp"
-            android:background="@android:color/white"
+            android:background="#12a5f4"
             android:clickable="true"
-            android:textSize="22sp"
+            android:textSize="50sp"
             android:text="No"
-            android:textColor="#5DBCD2"
+            android:textColor="#ffffff"
             android:textStyle="bold" />
     </LinearLayout>
 

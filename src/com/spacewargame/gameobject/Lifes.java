@@ -16,10 +16,10 @@ public class Lifes extends GameObject {
 
 	@Override
 	public void draw(Canvas canvas) {
-		float x = ScreenSize.getScreenWidth() - 220.0f;
+		float x = ScreenSize.getScreenWidth() - 70.0f;
 		for (int i = 0; i < mScoreManager.getLife(); i++) {
 			canvas.drawBitmap(mBitmap, x, 30.0f, null);
-			x -= 80.0f;
+			x -= 90.0f;
 		}
 
 	}

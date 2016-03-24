@@ -23,7 +23,6 @@ import com.spacewargame.gameobject.Explosion;
 import com.spacewargame.gameobject.GameConstants;
 import com.spacewargame.gameobject.Lifes;
 import com.spacewargame.gameobject.MainPlane;
-import com.spacewargame.gameobject.PausePlayButton;
 import com.spacewargame.gameobject.PurplePlane;
 import com.spacewargame.gameobject.YellowPlane;
 import com.spacewargame.gamethread.MainThread;
@@ -45,7 +44,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 	private ArrayList<Bullet> mMainBullet = new ArrayList<Bullet>();
 	private Lifes mLife;
 	private Paint mPaint;
-	private PausePlayButton mPausePlayButton;
 
 	private int mAddYellowPlaneTime = 0;
 	private int mAddBluePlaneTime = 0;
@@ -77,8 +75,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		mPaint.setTextSize(100.0f);
 
 		mLife = new Lifes(mBitmapManager.getLifeBitmap(), mScoreManager);
-		mPausePlayButton = new PausePlayButton(mBitmapManager.getPlayBitmap(),
-				mBitmapManager.getPauseBitmap());
+		mMainPlane = new MainPlane(mBitmapManager.getMainPlaneBitmap());
 
 	}
 
@@ -179,7 +176,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		if (!mIsStart) {
 			mIsStart = true;
 		}
-	
 		mMainPlane
 				.setX((int) (event.getX() - mMainPlane.getBitmap().getWidth() / 2));
 		mMainPlane.setY((int) (event.getY() - mMainPlane.getBitmap()
@@ -189,25 +185,21 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
 	@Override
 	public void onDraw(Canvas canvas) {
-		if (!mPausePlayButton.isPause()) {
-			canvas.drawColor(Color.BLACK);
-			mLife.draw(canvas);
-			canvas.drawText("" + mScoreManager.getScore(), 20, 100, mPaint);
-			if (mMainPlane != null) {
-				mMainPlane.draw(canvas);
-			}
-			if (mIsStart) {
-				mPausePlayButton.draw(canvas);
-				this.drawMainBullets(canvas);
-				this.drawYellowPlanes(canvas);
-				this.drawPurplePlanes(canvas);
-				this.drawBluePlanes(canvas);
-				this.drawExplosions(canvas);
-				checkMainBulletsAndEnemiesCollisions();
-				checkEnemiesBulletsAndMainPlaneCollisions();
-			}
+		canvas.drawColor(Color.BLACK);
+		mLife.draw(canvas);
+		canvas.drawText("" + mScoreManager.getScore(), 20, 100, mPaint);
+		if (mMainPlane != null) {
+			mMainPlane.draw(canvas);
 		}
-		
+		if (mIsStart) {
+			this.drawMainBullets(canvas);
+			this.drawYellowPlanes(canvas);
+			this.drawPurplePlanes(canvas);
+			this.drawBluePlanes(canvas);
+			this.drawExplosions(canvas);
+			checkMainBulletsAndEnemiesCollisions();
+			checkEnemiesBulletsAndMainPlaneCollisions();
+		}
 
 	}
 	
@@ -216,7 +208,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 			
 			@Override
 			public void run() {
-				ReplayDialog dialog = new ReplayDialog((Activity) mContext);
+				ReplayDialog dialog = new ReplayDialog((Activity) mContext, mScoreManager.getScore());
 				dialog.show();				
 			}
 		});
@@ -229,9 +221,8 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		Log.d("ScreenSize", "(" + getWidth() + "," + getHeight() + ")");
 		ScreenSize.setScreenHeight(this.getHeight());
 		ScreenSize.setScreenWidth(this.getWidth());
-		mMainPlane = new MainPlane(mBitmapManager.getMainPlaneBitmap());
 		mMainPlane.setLocation((getWidth() - mMainPlane.getWidth()) / 2,
-				getHeight() - 50);
+				getHeight() - 150);
 	}
 
 	private void checkMainBulletsAndEnemiesCollisions() {
@@ -296,6 +287,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 			for (int i = 0; i < blueBullets.size(); i++) {
 				if (mCollisionManager.checkCollision(mMainPlane, blueBullets.get(i))) {
 					mScoreManager.decreaseLife();
+					mExplosions.add(new Explosion(mMainPlane.getCenterX(),
+							mMainPlane.getCenterY(), mBitmapManager
+									.getSmallExplosionBitmap(), mBitmapManager
+									.getMediumExplosionBitmap(), mBitmapManager
+									.getBigExplosionBitmap()));
 					if (mScoreManager.getLife() == 0) {
 						displayReplayDialog();
 						mThread.setRunning(false);
@@ -311,6 +307,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 			for (int i = 0; i < yellowBullets.size(); i++) {
 				if (mCollisionManager.checkCollision(mMainPlane, yellowBullets.get(i))) {
 					mScoreManager.decreaseLife();
+					mExplosions.add(new Explosion(mMainPlane.getCenterX(),
+							mMainPlane.getCenterY(), mBitmapManager
+									.getSmallExplosionBitmap(), mBitmapManager
+									.getMediumExplosionBitmap(), mBitmapManager
+									.getBigExplosionBitmap()));
 					if (mScoreManager.getLife() == 0) {
 						displayReplayDialog();
 						mThread.setRunning(false);
@@ -325,6 +326,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 			for (int i = 0; i < purpleBullets.size(); i++) {
 				if (mCollisionManager.checkCollision(mMainPlane, purpleBullets.get(i))) {
 					mScoreManager.decreaseLife();
+					mExplosions.add(new Explosion(mMainPlane.getCenterX(),
+							mMainPlane.getCenterY(), mBitmapManager
+									.getSmallExplosionBitmap(), mBitmapManager
+									.getMediumExplosionBitmap(), mBitmapManager
+									.getBigExplosionBitmap()));
 					if (mScoreManager.getLife() == 0) {
 						displayReplayDialog();
 						mThread.setRunning(false);

@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.spacewargame.R;
 import com.spacewargame.gameview.ExitDialog;
+import com.spacewargame.gameview.HelpDialog;
+import com.spacewargame.gameview.HighScoreDialog;
 import com.spacewargame.gameview.OptionsDialog;
 
 public class MenuActivity extends Activity implements OnClickListener {
@@ -52,22 +54,23 @@ public class MenuActivity extends Activity implements OnClickListener {
 			Intent playIntent = new Intent(MenuActivity.this,
 					MainActivity.class);
 			startActivity(playIntent);
+			finish();
 			break;
 		case R.id.tv_quit:
-			ExitDialog dialog = new ExitDialog(MenuActivity.this);
-			dialog.show();
+			ExitDialog dialogQuit = new ExitDialog(MenuActivity.this);
+			dialogQuit.show();
 			break;
 		case R.id.tv_options:
 			OptionsDialog dialogOptions = new OptionsDialog(MenuActivity.this);
 			dialogOptions.show();
 			break;
 		case R.id.tv_help:
-			Intent helpIntent = new Intent(MenuActivity.this,
-					HelpActivity.class);
-			startActivity(helpIntent);
+			HelpDialog helpDialog = new HelpDialog(MenuActivity.this);
+			helpDialog.show();
 			break;
 		case R.id.tv_high_score:
-			
+			HighScoreDialog highScoreDialog = new HighScoreDialog(this);
+			highScoreDialog.show();
 			break;
 		default:
 			break;
