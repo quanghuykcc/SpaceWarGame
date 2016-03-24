@@ -39,6 +39,8 @@ public class ReplayDialog extends Dialog implements OnClickListener {
 	    mMessageText.setTypeface(tfFontFace);
 	    mMenuButton.setOnClickListener(this);
 	    mReplayButton.setOnClickListener(this);
+	    setCanceledOnTouchOutside(false);
+	    setCancelable(false);
 	}
 	
 	@Override
