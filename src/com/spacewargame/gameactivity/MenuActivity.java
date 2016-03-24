@@ -50,7 +50,9 @@ public class MenuActivity extends Activity implements OnClickListener {
 					MainActivity.class);
 			startActivity(playIntent);
 			break;
-
+		case R.id.tv_quit:
+			finish();
+			break;
 		default:
 			break;
 		}
