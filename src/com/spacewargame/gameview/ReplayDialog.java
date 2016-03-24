@@ -1,20 +1,19 @@
 package com.spacewargame.gameview;
 
-import com.spacewargame.R;
-import com.spacewargame.gameactivity.MainActivity;
-import com.spacewargame.gameactivity.MenuActivity;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.spacewargame.R;
+import com.spacewargame.gameactivity.MainActivity;
+import com.spacewargame.gameactivity.MenuActivity;
 
 public class ReplayDialog extends Dialog implements OnClickListener {
 	Activity mParentActivity;

@@ -25,8 +25,8 @@ public class SoundManager {
 	}
 
 	public void initSounds() {
-		addSound(SoundManager.SOUND_SHOOT, R.raw.sound);
-		addSound(SoundManager.SOUND_DETONATE, R.raw.detonate);
+		addSound(SoundManager.SOUND_SHOOT, R.raw.sound2);
+		addSound(SoundManager.SOUND_DETONATE, R.raw.no2);
 	}
 
 	private void addSound(int index, int soundID) {

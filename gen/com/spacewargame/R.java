@@ -51,13 +51,14 @@ public final class R {
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f090001;
-        public static final int action_settings=0x7f090015;
+        public static final int action_settings=0x7f090017;
         public static final int btn_no=0x7f090010;
         public static final int btn_yes=0x7f09000f;
+        public static final int btn_yes_op=0x7f090012;
         public static final int help_string=0x7f090000;
         public static final int img_splash=0x7f09000d;
-        public static final int imgbt_menu=0x7f090013;
-        public static final int imgbt_replay=0x7f090014;
+        public static final int imgbt_menu=0x7f090015;
+        public static final int imgbt_replay=0x7f090016;
         public static final int iv_background=0x7f090002;
         public static final int tableRow1=0x7f090003;
         public static final int tableRow2=0x7f090005;
@@ -70,8 +71,9 @@ public final class R {
         public static final int tv_play_game=0x7f090004;
         public static final int tv_quit=0x7f09000c;
         public static final int txt_dia=0x7f09000e;
-        public static final int txt_message=0x7f090011;
-        public static final int txt_score=0x7f090012;
+        public static final int txt_dia_op=0x7f090011;
+        public static final int txt_message=0x7f090013;
+        public static final int txt_score=0x7f090014;
     }
     public static final class layout {
         public static final int activity_help=0x7f030000;
@@ -81,7 +83,8 @@ public final class R {
         public static final int activity_setting=0x7f030004;
         public static final int activity_splash_screen=0x7f030005;
         public static final int dialog_exit=0x7f030006;
-        public static final int dialog_replay=0x7f030007;
+        public static final int dialog_options=0x7f030007;
+        public static final int dialog_replay=0x7f030008;
     }
     public static final class menu {
         public static final int help=0x7f080000;
@@ -89,11 +92,8 @@ public final class R {
         public static final int setting=0x7f080002;
     }
     public static final class raw {
-        public static final int collision_brick=0x7f040000;
-        public static final int detonate=0x7f040001;
-        public static final int shoot=0x7f040002;
-        public static final int sound=0x7f040003;
-        public static final int sound1=0x7f040004;
+        public static final int no2=0x7f040000;
+        public static final int sound2=0x7f040001;
     }
     public static final class string {
         public static final int action_settings=0x7f060006;
