@@ -12,8 +12,8 @@ public class PausePlayButton extends GameObject {
 	public PausePlayButton(Bitmap playBitmap, Bitmap pauseBitmap) {
 		this.mBitmap = playBitmap;
 		this.mPauseBitmap = pauseBitmap;
-		mX = ScreenSize.getScreenWidth() - 30.0f;
-		mY = 1.0f;
+		mX = ScreenSize.getScreenWidth()+950.0f ;
+		mY = 20.0f;
 	}
 
 	public void setPause(boolean isPause) {

@@ -71,7 +71,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		mPaint = new Paint();
 		mPaint.setColor(Color.MAGENTA);
 		mPaint.setTypeface(lavaFontFace);
-		mPaint.setTextSize(25.0f);
+		mPaint.setTextSize(100.0f);
 
 		mLife = new Lifes(mBitmapManager.getLifeBitmap(), mScoreManager);
 		mPausePlayButton = new PausePlayButton(mBitmapManager.getPlayBitmap(),
@@ -189,7 +189,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		if (!mPausePlayButton.isPause()) {
 			canvas.drawColor(Color.BLACK);
 			mLife.draw(canvas);
-			canvas.drawText("" + mScoreManager.getScore(), 10, 20, mPaint);
+			canvas.drawText("" + mScoreManager.getScore(), 20, 100, mPaint);
 			if (mMainPlane != null) {
 				mMainPlane.draw(canvas);
 			}

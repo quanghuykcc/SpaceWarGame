@@ -2,6 +2,7 @@ package com.spacewargame.gameactivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,7 @@ public class MenuActivity extends Activity implements OnClickListener {
 		mHelpTV = (TextView) findViewById(R.id.tv_help);
 		mQuitTV = (TextView) findViewById(R.id.tv_quit);
 		Typeface lavaFontFace = Typeface.createFromAsset(getAssets(),
-				"fonts/lava.ttf");
+				"fonts/VNTHFAP3.TTF");
 		mPlayGameTV.setTypeface(lavaFontFace);
 		mPlayGameTV.setOnClickListener(this);
 		mHighScoreTV.setTypeface(lavaFontFace);
@@ -39,6 +40,7 @@ public class MenuActivity extends Activity implements OnClickListener {
 		mHelpTV.setOnClickListener(this);
 		mQuitTV.setTypeface(lavaFontFace);
 		mQuitTV.setOnClickListener(this);
+		
 
 	}
 
