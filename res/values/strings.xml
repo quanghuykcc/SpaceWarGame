@@ -9,8 +9,7 @@
     <string name="title_activity_setting">SettingActivity</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_help">HelpActivity</string>
-    <string name="help">Hi.. !! Di chuy?n máy bay tránh nh?ng viên ð?n, ð?ng th?i bán máy bay ð?ch ð?, m?i 
-        máy bay b?n trúng b?n ðý?c 1 ði?m, b?n có 3 m?ng ð? chõi. Chúc b?n may m?n.</string>
+    <string name="help">Help</string>
     <string name="title_activity_high_score">HighScoreActivity</string>
 
 </resources>

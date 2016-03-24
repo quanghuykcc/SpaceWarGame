@@ -25,7 +25,7 @@ public class SoundManager {
 	}
 
 	public void initSounds() {
-		addSound(SoundManager.SOUND_SHOOT, R.raw.sound1);
+		addSound(SoundManager.SOUND_SHOOT, R.raw.sound);
 		addSound(SoundManager.SOUND_DETONATE, R.raw.detonate);
 	}
 
