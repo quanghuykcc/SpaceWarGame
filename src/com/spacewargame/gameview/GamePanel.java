@@ -10,9 +10,11 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.spacewargame.gameactivity.MainActivity;
 import com.spacewargame.gamemanager.BitmapManager;
 import com.spacewargame.gamemanager.CollisionManager;
 import com.spacewargame.gamemanager.ScoreManager;
