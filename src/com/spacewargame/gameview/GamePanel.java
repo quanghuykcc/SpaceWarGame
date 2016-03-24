@@ -212,9 +212,17 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 	}
 	
 	private void displayReplayDialog() {
-		ReplayDialog dialog = new ReplayDialog((Activity) mContext);
-		dialog.show();
+		((Activity)mContext).runOnUiThread(new Runnable() {
+			
+			@Override
+			public void run() {
+				ReplayDialog dialog = new ReplayDialog((Activity) mContext);
+				dialog.show();				
+			}
+		});
+		
 	}
+	
 
 	@Override
 	public void onWindowFocusChanged(boolean hasWindowFocus) {
@@ -290,6 +298,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 					mScoreManager.decreaseLife();
 					if (mScoreManager.getLife() == 0) {
 						displayReplayDialog();
+						mThread.setRunning(false);
 					}
 					blueBullets.remove(i);
 			
@@ -304,6 +313,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 					mScoreManager.decreaseLife();
 					if (mScoreManager.getLife() == 0) {
 						displayReplayDialog();
+						mThread.setRunning(false);
 					}
 					yellowBullets.remove(i);
 				}
@@ -317,6 +327,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 					mScoreManager.decreaseLife();
 					if (mScoreManager.getLife() == 0) {
 						displayReplayDialog();
+						mThread.setRunning(false);
 					}
 					purpleBullets.remove(i);
 				}
