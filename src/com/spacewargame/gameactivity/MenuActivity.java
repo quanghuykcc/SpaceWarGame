@@ -2,7 +2,6 @@ package com.spacewargame.gameactivity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -58,6 +57,9 @@ public class MenuActivity extends Activity implements OnClickListener {
 			dialog.show();
 			break;
 		case R.id.tv_help:
+			Intent helpIntent = new Intent(MenuActivity.this,
+					HelpActivity.class);
+			startActivity(helpIntent);
 			break;
 		default:
 			break;

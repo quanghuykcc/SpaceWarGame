@@ -41,7 +41,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Play Game"
                 android:padding="10dp"
-                android:textColor="#512800"
+                android:textColor="#EC0076"
                 android:textSize="48sp" />
         </TableRow>
 
@@ -58,7 +58,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
                 android:text="High Score"
-                android:textColor="#512800"
+                android:textColor="#EC0076"
                 android:textSize="48sp" />
         </TableRow>
 
@@ -74,7 +74,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
                 android:text="Options"
-                android:textColor="#512800"
+                android:textColor="#EC0076"
                 android:textSize="48sp" />
         </TableRow>
 
@@ -90,7 +90,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
                 android:text="Help"
-                android:textColor="#512800"
+                android:textColor="#EC0076"
                 android:textSize="48sp" />
         </TableRow>
 
@@ -106,7 +106,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
                 android:text="Quit"
-                android:textColor="#512800"
+                android:textColor="#EC0076"
                 android:textSize="48sp" />
 
         </TableRow>

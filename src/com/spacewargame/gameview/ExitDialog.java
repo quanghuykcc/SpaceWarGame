@@ -29,7 +29,7 @@ public class ExitDialog extends Dialog implements android.view.View.OnClickListe
 	    mNoButton = (Button) findViewById(R.id.btn_no);
 	    mMessage = (TextView) findViewById(R.id.txt_dia);
 	    Typeface lavaFontFace = Typeface.createFromAsset(mParentActivity.getAssets(),
-				"fonts/lava.ttf");
+				"fonts/VNTHFAP3.TTF");
 	    mYesButton.setTypeface(lavaFontFace);
 	    mNoButton.setTypeface(lavaFontFace);
 	    mMessage.setTypeface(lavaFontFace);

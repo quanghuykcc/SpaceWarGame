@@ -2,11 +2,10 @@ package com.spacewargame.gameobject;
 
 import java.util.ArrayList;
 
-import com.spacewargame.gameview.ScreenSize;
-
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
+
+import com.spacewargame.gameview.ScreenSize;
 
 public class BluePlane extends Plane {
 	public BluePlane(float x, float y, Bitmap planeBitmap, Bitmap bulletBitmap) {
