@@ -9,7 +9,6 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 
 public class BluePlane extends Plane {
-	Matrix mTransformMattrix;
 	public BluePlane(float x, float y, Bitmap planeBitmap, Bitmap bulletBitmap) {
 		this.mX = x;
 		this.mY = y;
@@ -17,18 +16,12 @@ public class BluePlane extends Plane {
 		this.mBulletBitmap = bulletBitmap;
 		mBullets = new ArrayList<Bullet>();
 		mVelocityY = GameConstants.BLUE_PLANE_VELOCITY_Y;
-		mTransformMattrix = new Matrix();
-		mTransformMattrix.reset();
-		mTransformMattrix.preRotate(30);
-
 	}
 
 	@Override
 	public void draw(Canvas canvas) {
 		if (mIsRender) {
-			mTransformMattrix.preTranslate(mX, mY);
-			canvas.drawBitmap(mBitmap, mTransformMattrix, null);
-			
+			canvas.drawBitmap(mBitmap, mX, mY, null);			
 			mTimeShoot++;
 			if (mTimeShoot == GameConstants.BLUE_PLANE_TIMESHOOT_LIMIT) {
 				Bullet bullet = new Bullet(mBulletBitmap);
