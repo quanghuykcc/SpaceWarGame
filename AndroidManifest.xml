@@ -39,10 +39,14 @@
             android:label="@string/title_activity_setting" >
         </activity>
         <activity
-            android:name="com.spacewargame.gameactivity.HelpActivity"
+            android:name=".gameactivity.HelpActivity"
             android:label="@string/title_activity_help"
             android:parentActivityName=".gameactivity.MenuActivity"
              >
+        </activity>
+        <activity
+            android:name="com.spacewargame.gameactivity.HighScoreActivity"
+            android:label="@string/title_activity_high_score" >
         </activity>
     </application>
 
