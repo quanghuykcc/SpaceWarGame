@@ -1,5 +1,6 @@
 package com.spacewargame.gameview;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -33,6 +34,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 	private BitmapManager mBitmapManager;
 	private CollisionManager mCollisionManager;
 	private ScoreManager mScoreManager;
+	private Context mContext;
 
 	// game objects
 	private MainPlane mMainPlane;
@@ -55,6 +57,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 	public GamePanel(Context context) {
 		super(context);
 		getHolder().addCallback(this);
+		mContext = context;
 		mThread = new MainThread(getHolder(), this);
 		setFocusable(true);
 
@@ -207,6 +210,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 		
 
 	}
+	
+	private void displayReplayDialog() {
+		ReplayDialog dialog = new ReplayDialog((Activity) mContext);
+		dialog.show();
+	}
 
 	@Override
 	public void onWindowFocusChanged(boolean hasWindowFocus) {
@@ -281,7 +289,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 				if (mCollisionManager.checkCollision(mMainPlane, blueBullets.get(i))) {
 					mScoreManager.decreaseLife();
 					if (mScoreManager.getLife() == 0) {
-						
+						displayReplayDialog();
 					}
 					blueBullets.remove(i);
 			
@@ -295,7 +303,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 				if (mCollisionManager.checkCollision(mMainPlane, yellowBullets.get(i))) {
 					mScoreManager.decreaseLife();
 					if (mScoreManager.getLife() == 0) {
-						
+						displayReplayDialog();
 					}
 					yellowBullets.remove(i);
 				}
@@ -308,7 +316,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 				if (mCollisionManager.checkCollision(mMainPlane, purpleBullets.get(i))) {
 					mScoreManager.decreaseLife();
 					if (mScoreManager.getLife() == 0) {
-						
+						displayReplayDialog();
 					}
 					purpleBullets.remove(i);
 				}
