@@ -22,7 +22,7 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int background_help=0x7f020000;
+        public static final int app_icon=0x7f020000;
         public static final int bullet=0x7f020001;
         public static final int bullet_blue=0x7f020002;
         public static final int bullet_purple=0x7f020003;
@@ -30,19 +30,16 @@ public final class R {
         public static final int fire_big=0x7f020005;
         public static final int fire_medium=0x7f020006;
         public static final int fire_small=0x7f020007;
-        public static final int gun=0x7f020008;
-        public static final int help=0x7f020009;
-        public static final int ic_launcher=0x7f02000a;
-        public static final int ic_menu=0x7f02000b;
-        public static final int ic_replay=0x7f02000c;
-        public static final int icon_help=0x7f02000d;
-        public static final int img_menu_background=0x7f02000e;
-        public static final int img_splash_screen=0x7f02000f;
-        public static final int plane_blue=0x7f020010;
-        public static final int plane_life=0x7f020011;
-        public static final int plane_main=0x7f020012;
-        public static final int plane_purple=0x7f020013;
-        public static final int plane_yellow=0x7f020014;
+        public static final int ic_launcher=0x7f020008;
+        public static final int ic_menu=0x7f020009;
+        public static final int ic_replay=0x7f02000a;
+        public static final int img_menu_background=0x7f02000b;
+        public static final int img_splash_screen=0x7f02000c;
+        public static final int plane_blue=0x7f02000d;
+        public static final int plane_life=0x7f02000e;
+        public static final int plane_main=0x7f02000f;
+        public static final int plane_purple=0x7f020010;
+        public static final int plane_yellow=0x7f020011;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f090000;

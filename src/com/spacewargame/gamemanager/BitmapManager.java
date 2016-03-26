@@ -19,9 +19,6 @@ public class BitmapManager {
 	private Bitmap mMediumExplosionBitmap;
 	private Bitmap mBigExplosionBitmap;
 	private Bitmap mLifeBitmap;
-	private Bitmap mRocketBitmap;
-	private Bitmap mPauseBitmap;
-	private Bitmap mPlayBitmap;
 
 	public BitmapManager(Resources resources) {
 		mBulletBitmap = BitmapFactory.decodeResource(resources,
@@ -48,18 +45,6 @@ public class BitmapManager {
 				R.drawable.fire_big);
 		mLifeBitmap = BitmapFactory.decodeResource(resources,
 				R.drawable.plane_life);
-	}
-
-	public Bitmap getPauseBitmap() {
-		return mPauseBitmap;
-	}
-
-	public Bitmap getPlayBitmap() {
-		return mPlayBitmap;
-	}
-
-	public Bitmap getRocketBitmap() {
-		return mRocketBitmap;
 	}
 
 	public Bitmap getLifeBitmap() {
